@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <h2>Register Form</h2>
+    <form [formGroup] ="firstReactiveForm" (ngSubmit) ="handleForm()">
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" formControlName="nameInput">
+            <div id="nameHelp" class="form-text" *ngIf ="formControls['nameInput'].touched && !formControls['nameInput'].valid">
+                <small class="alert-danger" *ngIf ="formControls['nameInput'].errors?.['required']">
+                    Field is required
+                </small>
+            </div>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail2" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" formControlName="emailInput">
+          <div id="emailHelp" class="form-text">
+            <small class="alert-danger">
+                Field is required
+            </small>
+          </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputUserName" class="form-label">User Name</label>
+            <input type="userName" class="form-control" id="exampleInputUserName" aria-describedby="userNameHelp" formControlName="userNameInput">
+            <div id="userNameHelp" class="form-text">
+                <small class="alert-danger">
+                    Field is required
+                </small>
+            </div>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword2" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword2" formControlName="passwordInput">
+          <div id="userNameHelp" class="form-text">
+            <small class="alert-danger">
+                Field is required
+            </small>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputConfirmPassword1" class="form-label">Confirm Password</label>
+            <input type="confirmPassword" class="form-control" id="exampleInputConfirmPassword1" formControlName="confirmPasswordInput">
+            <div id="userNameHelp" class="form-text">
+                <small class="alert-danger">
+                    Field is required
+                </small>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+</div>

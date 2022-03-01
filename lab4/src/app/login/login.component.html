@@ -1,0 +1,27 @@
+<div class="container my-4">
+    <h2>Login Form</h2>
+    <form #firstForm="ngForm" (ngSubmit)="submitFunc(firstForm.value)">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required ngModel name="emailInput" #emailInput="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+          <div id="emailHelp" class="form-text" *ngIf="emailInput.touched && !emailInput.valid">
+              <small class="alert-danger" *ngIf="emailInput.errors?.['required']">
+                  Field is required
+              </small>
+              <small class="alert-danger" *ngIf="emailInput.errors?.['pattern']">
+                Field is required
+            </small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" required ngModel name="passInput" #passInput="ngModel">
+          <div id="passlHelp" class="form-text" *ngIf="passInput.touched && !passInput.valid">
+            <small class="alert-danger" *ngIf="emailInput.errors?.['required']">
+                Field is required
+            </small>
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
