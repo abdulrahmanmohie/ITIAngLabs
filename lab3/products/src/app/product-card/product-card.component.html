@@ -1,8 +1,12 @@
-<div class="card" style="width: 18rem">
-    <img src="..." class="card-img-top" alt="..." />
+<div class="card" style="width:18rem">
+    <img src={{productImage}} class="card-img-top" alt="..." />
     <div class="card-body">
-      <h5 class="card-title">{{ cardTitle}}</h5>
-      <!--<h5 class="card-title"> Size : {{ cardSize | customPipe }}</h5> -->
+      <h5 class="card-title">{{ productName}}</h5>
+      <h5 class="card-title">{{ productCategory}}</h5>
+      <small class="card-title d-block">{{ productPrice}}</small>
+      <span class="d-block" style="color: red;" *ngIf="productCount== 0">Not available in stock!</span>
+      <span class="d-block" style="color:green" *ngIf="productCount > 0">In stock</span>
+      <!-- <h5 class="card-title"> Size : {{ cardSize | customPipe }}</h5> -->
   
       <button class="btn btn-primary">
         Go somewhere

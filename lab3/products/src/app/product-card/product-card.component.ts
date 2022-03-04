@@ -7,7 +7,15 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input() cardTitle: any;
+  @Input() productImage: any;
+  @Input() productName: any;
+  @Input() productCategory: any;
+  @Input() productPrice: any;
+  @Input() productCount: any ;
+
+
+
+
 
   constructor() { }
 
